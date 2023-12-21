@@ -1,0 +1,142 @@
+    /* 重置默认样式 */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    /* 设置HTML高度为100%视窗高度，并定义变量 */
+    html {
+        height: 100%;
+        --u: 10px;
+        --c1: #fbf9fe;
+        --c2: #02b6e7;
+        --c3: #00699b;
+        --gp: 50%/ calc(var(--u) * 16.9) calc(var(--u) * 12.8);
+      /* 创建背景渐变效果 */
+        background: 
+          conic-gradient(from 122deg at 50% 85.15%, var(--c2) 0 58deg, var(--c3) 0 116deg, #fff0 0 100%) var(--gp),
+          conic-gradient(from 122deg at 50% 72.5%, var(--c1) 0 116deg, #fff0 0 100%) var(--gp),
+          conic-gradient(from 58deg at 82.85% 50%, var(--c3) 0 64deg, #fff0 0 100%) var(--gp),
+          conic-gradient(from 58deg at 66.87% 50%, var(--c1) 0 64deg, var(--c2) 0 130deg, #fff0 0 100%) var(--gp),
+          conic-gradient(from 238deg at 17.15% 50%, var(--c2) 0 64deg, #fff0 0 100%) var(--gp),
+          conic-gradient(from 172deg at 33.13% 50%, var(--c3) 0 66deg, var(--c1) 0 130deg, #fff0 0 100%) var(--gp),
+          linear-gradient(98deg, var(--c3) 0 15%, #fff0 calc(15% + 1px) 100%) var(--gp),
+          linear-gradient(-98deg, var(--c2) 0 15%, #fff0 calc(15% + 1px) 100%) var(--gp),
+          conic-gradient(from -58deg at 50.25% 14.85%, var(--c3) 0 58deg, var(--c2) 0 116deg, #fff0 0 100%) var(--gp),
+          conic-gradient(from -58deg at 50% 28.125%, var(--c1) 0 116deg, #fff0 0 100%) var(--gp),
+          linear-gradient(90deg, var(--c2) 0 50%, var(--c3) 0 100%) var(--gp);
+    }
+    /* 设置body的内边距 */
+    body {
+        padding: 200px;
+    }
+    /* 定义Head_Body的样式，设置为弹性盒子，并居中对齐 */
+    .Head_Body {
+        width: 1140px;
+        display: flex;
+        gap: 200px;
+        justify-content: center;
+    }
+    /* 定义Box_One的样式 */
+    .Box_One {
+        display: flex;
+        width: 165px;
+        padding: 24px;
+        flex-direction: column;
+        align-items: center;
+        flex-shrink: 0;
+        border: 1px solid var(--gray, #2e2e2e);
+        background: #fff;
+        box-shadow: 4px 4px 0px 0px #2e2e2e;
+    }
+    /* 定义Box_One_Ico的样式 */
+    .Box_One_Ico {
+        width: 80px;
+        height: 80px;
+        padding: 25px;
+    }
+    /* 定义Box_One_Button_one的样式 */
+    .Box_One_Button_one {
+        color: #2e2e2e;
+        text-align: center;
+        position: relative;
+        font-size: 16px;
+        padding: 8px 12px;
+        outline: none;
+        box-shadow: 3px 3px 0 #2e2e2e;
+        box-sizing: border-box;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 140%;
+    }
+    /* 定义Box_One_Button_one#A的样式 */
+    .Box_One_Button_one#A {
+        background: #3fbdf1;
+        border: none;
+    }
+    /* 定义Box_One_Button_one#B的样式 */
+    .Box_One_Button_one#B {
+        background: #f5bd33;
+        border: none;
+    }
+    /* 定义add-data的样式 */
+    .add-data .layui-layer-title {
+        background-color: #3fbdf1;
+        color: #2e2e2e;
+        font-size: 16px;
+        font-weight: 700;
+    }
+    /* 定义add-data的内容区样式 */
+    .add-data .layui-layer-content {
+        padding: 20px;
+    }
+    /* 定义dataTable的样式 */
+    #dataTable {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    /* 定义dataTable中th和td的样式 */
+    #dataTable th, #dataTable td {
+        border: 1px solid #2e2e2e;
+        padding: 5px;
+        text-align: center;
+    }
+    /* 定义dataTable中th的样式 */
+    #dataTable th {
+        background-color: #f5bd33;
+        color: #2e2e2e;
+    }
+    /* 定义dataTable中偶数行的背景颜色 */
+    #dataTable tr:nth-child(even) {
+        background-color: #fbf9fe;
+    }
+    /* 定义dataForm中input[type="button"]的样式 */
+    #dataForm input[type="button"] {
+        color: #2e2e2e;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 8px 16px;
+        position: relative;
+        box-shadow: 4px 4px 0px 0px #2e2e2e;
+        background-color: #3fbdf1;
+        border: none;
+        cursor: pointer;
+    }
+    /* 定义dataForm中input[type="text"]的样式 */
+    #dataForm input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+    /* 定义display-data的样式 */
+    .display-data .layui-layer-title {
+        background-color: #f5bd33;
+        color: #2e2e2e;
+        font-size: 16px;
+        font-weight: 700;
+    }
+    /* 定义display-data的内容区样式 */
+    .display-data .layui-layer-content {
+        padding: 10px;
+    }

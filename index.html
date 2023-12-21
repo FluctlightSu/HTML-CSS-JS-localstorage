@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>localstorage Demo</title>
+  <!-- The third-party open source pop-up js|css component is used here -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/layer/3.1.1/theme/default/layer.css">
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/layer/3.1.1/layer.js"></script>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="Head_Body">
+    <!-- Add data module -->
+    <div class="Box_One">
+      <div class="Box_One_Ico">
+        <svg width="81" height="80" viewBox="0 0 81 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M40.5001 55C42.1569 55 43.5001 56.3432 43.5001 58C43.5001 59.6569 42.1569 61 40.5001 61C38.8432 61 37.5001 59.6569 37.5001 58C37.5001 56.3432 38.8432 55 40.5001 55ZM41.5001 58C41.5001 57.4477 41.0524 57 40.5001 57C39.9478 57 39.5001 57.4477 39.5001 58C39.5001 58.5523 39.9478 59 40.5001 59C41.0524 59 41.5001 58.5523 41.5001 58Z" fill="black"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M36.5001 49C36.5001 46.2386 34.2615 44 31.5001 44C28.7386 44 26.5001 46.2386 26.5001 49C26.5001 51.7614 28.7386 54 31.5001 54C34.2615 54 36.5001 51.7614 36.5001 49ZM31.5001 46C33.1569 46 34.5001 47.3432 34.5001 49C34.5001 50.6569 33.1569 52 31.5001 52C29.8432 52 28.5001 50.6569 28.5001 49C28.5001 47.3432 29.8432 46 31.5001 46Z" fill="black"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M56.5001 54C60.3661 54 63.5001 57.134 63.5001 61C63.5001 64.866 60.3661 68 56.5001 68C52.6341 68 49.5001 64.866 49.5001 61C49.5001 57.134 52.6341 54 56.5001 54ZM61.5001 61C61.5001 58.2386 59.2615 56 56.5001 56C53.7386 56 51.5001 58.2386 51.5001 61C51.5001 63.7614 53.7386 66 56.5001 66C59.2615 66 61.5001 63.7614 61.5001 61Z" fill="black"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M26.5001 5H54.5001V13H49.5001V20.1242L74.1343 61.3865C77.7158 67.3855 73.3935 75 66.4067 75H14.5934C7.60661 75 3.28432 67.3855 6.86584 61.3865L31.5001 20.1242V13H26.5001V5ZM28.5001 7V11H33.5001V20.6758L26.119 33.0391C32.6436 33.3606 36.4838 35.6168 40.4439 37.9434C40.8357 38.1736 41.2293 38.4048 41.6261 38.6346C46.1118 41.2316 51.2765 43.8194 61.4196 43.991L47.5001 20.6758V11H52.5001V7H28.5001ZM8.58308 62.4117L24.9465 35.003C31.6357 35.0943 35.2904 37.2388 39.4428 39.6754C39.8312 39.9034 40.224 40.1338 40.624 40.3654C45.4818 43.1778 51.1956 46 62.5001 46C62.539 46 62.5773 45.9978 62.6151 45.9935L72.417 62.4117C75.2027 67.0776 71.8409 73 66.4067 73H14.5934C9.15924 73 5.79746 67.0776 8.58308 62.4117Z" fill="black"/>
+        </svg>          
+      </div>
+      <button class="Box_One_Button_one" id="A" onclick="addData()">
+        Adding Data
+      </button>
+    </div>
+    <!-- View | Delete data module -->
+    <div class="Box_One">
+      <div class="Box_One_Ico">     
+        <svg width="81" height="80" viewBox="0 0 81 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M47.8464 13.2431C45.8487 14.9683 43.2892 16 40.5 16C37.7108 16 35.1513 14.9683 33.1536 13.2431L31.8464 14.7569C34.1874 16.7784 37.2051 18 40.5 18C43.7949 18 46.8126 16.7784 49.1536 14.7569L47.8464 13.2431Z" fill="#2E2E2E"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M68.5 44C68.5 57.962 61.9598 70.0145 52.5 75.6319C52.4254 75.6762 52.3505 75.7201 52.2755 75.7636C51.7049 76.0947 51.1238 76.4025 50.5331 76.686L50.5143 76.695C50.5077 76.6982 50.5 76.6934 50.5 76.686V55C50.5 49.4772 46.0228 45 40.5 45C34.9772 45 30.5 49.4772 30.5 55V76.686C30.5 76.6934 30.4923 76.6982 30.4857 76.695L30.4669 76.686C29.8762 76.4025 29.2951 76.0947 28.7245 75.7636C28.6495 75.7201 28.5746 75.6762 28.5 75.6318C19.0402 70.0145 12.5 57.962 12.5 44C12.5 41.0169 11.6694 38.0862 10.3598 35.4059C9.60498 33.8611 8.97612 32.2062 8.49806 30.4596C5.24203 18.5641 10.2145 6.92423 19.6044 4.46124C23.6886 3.38996 27.9358 4.23124 31.6994 6.50283C34.3415 8.09748 37.414 9 40.5 9C43.586 9 46.6585 8.09748 49.3006 6.50283C53.0642 4.23124 57.3114 3.38996 61.3956 4.46124C70.7855 6.92423 75.758 18.5641 72.5019 30.4596C72.0239 32.2062 71.395 33.8611 70.6402 35.4059C69.3306 38.0862 68.5 41.0169 68.5 44ZM12.1567 34.5279C11.4569 33.0955 10.8722 31.5578 10.4271 29.9316C7.33814 18.6464 12.2108 8.46826 20.1119 6.3958C23.5889 5.48376 27.2843 6.17406 30.666 8.21512C33.6022 9.98734 37.0296 11 40.5 11C43.9704 11 47.3978 9.98734 50.3341 8.21512C53.7157 6.17406 57.4111 5.48376 60.8881 6.3958C68.7892 8.46826 73.6619 18.6464 70.5729 29.9316C70.1278 31.5578 69.5431 33.0955 68.8433 34.5279C67.4318 37.4167 66.5 40.6478 66.5 44C66.5 56.8733 60.7071 67.8211 52.5 73.2696V55C52.5 48.3726 47.1274 43 40.5 43C33.8726 43 28.5 48.3726 28.5 55V73.2696C20.2929 67.8211 14.5 56.8733 14.5 44C14.5 40.6478 13.5682 37.4167 12.1567 34.5279Z" fill="#2E2E2E"/>
+          </svg>             
+      </div>
+      <button class="Box_One_Button_one" id="B" onclick="displayData()">
+        View | Delete Data
+      </button>
+    </div>
+  </div>
+  <br>
+  <!-- Data list module -->
+  <table id="dataTable"></table>
+
+  <!-- Inline Js -->
+<script>
+// Pop-up layer index variable, used to store the index of the pop-up layer for easy closing
+var layerIndex; 
+// Function: add new data
+function addData() {
+  //Construct the HTML string of the form
+  var formHTML =
+      '<form id="dataForm">' +
+      '<label for="name">Name:</label>' +
+      '<input type="text" id="name" required><br>' +
+      '<label for="id">Student ID:</label>' +
+      '<input type="text" id="id" required><br>' +
+      '<label for="class">Class:</label>' +
+      '<input type="text" id="class" required><br>' +
+      '<label for="major">Professional:</label>' +
+      '<input type="text" id="major" required><br>' +
+      '<input type="button" value="Submit" onclick="submitData()">' +
+      "</form>";
+
+  //Open the pop-up layer and display the form
+  layer.open({
+    type: 1,
+    title: "Add new data", 
+    content: formHTML,
+    area: ["500px", "400px"], // Use width and height size
+    skin: "add-data", // Use custom style skin
+  });
+}
+
+// Function: Submit data
+function submitData() {
+  // Get the data in the form
+  var name = document.getElementById("name").value;
+  var id = document.getElementById("id").value;
+  var className = document.getElementById("class").value;
+  var major = document.getElementById("major").value;
+
+  // Check if all fields are filled in
+  if (name && id && className && major) {
+
+    // Check whether the student number is a pure number
+    if (!/^\d+$/.test(id)) {
+      alert(" The student ID can only contain numbers, please re-enter! ");
+      return;
+    }
+    
+    // Get the saved data from local storage, or create an empty array if none
+    var storedData = JSON.parse(localStorage.getItem("studentData")) || [];
+
+    // Check if the student number is duplicated
+    var isDuplicate = storedData.some((item) => item[1] === id);
+
+    if (!isDuplicate) {
+      // Add new data to the array and update local storage
+      storedData.push([name, id, className, major]);
+      localStorage.setItem("studentData", JSON.stringify(storedData));
+      layer.closeAll(); // Close all popup layers
+    } else {
+      alert(" Students with the same student ID exist! Please add another student! ");
+    }
+  } else {
+    alert(" Please fill in all fields! ");
+  }
+}
+
+// Function: display data
+function displayData() {
+  // Get the saved data from local storage, or create an empty array if none
+  var storedData = JSON.parse(localStorage.getItem("studentData")) || [];
+
+  // Construct an HTML table string that displays data
+  var tableHTML =
+    '<table id="dataTable">' +
+    "<tr><th>Name</th><th>Student ID</th><th>Class</th><th>Major</th><th>Operation</th></tr>";
+
+  // Loop through data and build table rows
+  storedData.forEach(function (data, index) {
+    tableHTML += "<tr>";
+
+    // Loop through data in rows and build table cells
+    data.forEach(function (value) {
+      tableHTML += "<td>" + value + "</td>";
+    });
+
+    // Add a delete button and associate the delete function
+    tableHTML +=
+      '<td><button onclick="deleteRow(' + index + ')">Delete</button></td></tr>';
+  });
+
+  tableHTML += "</table>";
+
+  // If there is a pop-up layer index, close the pop-up layer first
+  if (layerIndex) {
+    layer.close(layerIndex);
+  }
+
+  //Open a new pop-up layer to display the data table
+  layerIndex = layer.open({
+    type: 1,
+    title: "View|Delete existing data",
+    content: tableHTML,
+    area: ["800px", "600px"], // Use width and height size
+    btn: ["closure"],  // button
+    yes: function (index, layero) {
+      layer.close(index);
+    },
+    skin: "display-data", // Use custom style skin
+    success: function (layero, index) {
+      //Set the style of the popup layer close button
+      $(layero).find(".layui-layer-btn0").addClass("Box_One_Button_one");
+      $(layero).find(".layui-layer-btn0").css("background-color", "#f5bd33");
+      $(layero).find(".layui-layer-btn0").css("border-color", "#f5bd33");
+    },
+  });
+}
+
+// Function: delete row
+function deleteRow(index) {
+  // Get the saved data from local storage, or create an empty array if none
+  var storedData = JSON.parse(localStorage.getItem("studentData")) || [];
+
+  //Delete the data at the specified index and update local storage
+  storedData.splice(index, 1);
+  localStorage.setItem("studentData", JSON.stringify(storedData));
+
+  //Redisplay the data table
+  displayData();
+}
+</script>
+</body>
+</html>
